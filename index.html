@@ -116,7 +116,6 @@ section{padding:96px 48px;}
 .room-img{position:relative;overflow:hidden;background:var(--pedra);}
 .room:not(.feat) .room-img{aspect-ratio:4/3;}
 .room.feat .room-img{aspect-ratio:16/9;}
-.room-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
 .room:hover .room-img img{transform:none;}
 .room-tag{position:absolute;top:14px;left:14px;background:var(--tinta);color:var(--branco);font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 13px;border-radius:50px;}
 .room-tag.sol{background:var(--sol);color:var(--tinta);}
@@ -266,12 +265,11 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.hero-photo{animation:none;}}
 
-.room-slides{cursor:pointer;}
 /* ===== Room Sliders ===== */
-.room-slider{position:relative;width:100%;height:100%;overflow:hidden;}
-.room-slides{display:flex;height:100%;transition:transform .4s ease;will-change:transform;}
-.room-slide{min-width:100%;height:100%;flex-shrink:0;}
-.room-slide img{width:100%;height:100%;object-fit:contain;background:var(--pedra);transition:opacity .45s ease;}
+.room-slider{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;}
+.room-slides{display:flex;height:100%;transition:transform .4s ease;will-change:transform;cursor:pointer;}
+.room-slide{flex:0 0 100%;width:100%;height:100%;min-width:0;}
+.room-slide img{display:block;width:100%;height:100%;object-fit:cover;background:var(--pedra);}
 .slide-prev,.slide-next{display:none;}
 .slide-dots-r{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10;}
 .sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,254,250,.5);border:none;cursor:pointer;transition:.2s;padding:0;}
@@ -345,7 +343,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
     <div class="stat-item reveal r-d1"><span style="font-size:1.3rem">🚇</span><div class="stat-text"><strong>5 min</strong><span>do Metrô</span></div></div>
     <div class="stat-item reveal r-d2"><span style="font-size:1.3rem">✝️</span><div class="stat-text"><strong>3,2 km</strong><span>do Cristo Redentor</span></div></div>
     <div class="stat-item reveal r-d3"><span style="font-size:1.3rem">🏖️</span><div class="stat-text"><strong>20 min</strong><span>de Copacabana</span></div></div>
-    <div class="stat-item reveal r-d4"><span style="font-size:1.3rem">✈️</span><div class="stat-text"><strong>6 km</strong><span>do Santos Dumont</span></div></div>
+    <div class="stat-item reveal r-d4"><span style="font-size:1.3rem">✈️</span><div class="stat-text"><strong>6 km</strong><span>do Aeroporto Santos Dumont</span></div></div>
     <div class="stat-item reveal"><span style="font-size:1.3rem">🐾</span><div class="stat-text"><strong>Pet</strong><span>friendly</span></div></div>
   </div>
 </div>
@@ -361,7 +359,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
       <div>
         <div class="eyebrow reveal">Sobre nós</div>
         <h2 class="h2 reveal r-d1">Uma casa que<br>parece <em>família</em></h2>
-        <p class="sub reveal r-d2">Hospedagem para todos os públicos — quartos privativos para casais e famílias e compartilhados para quem viaja sozinho. Lounge, redário, área de meditação e Wi-Fi grátis em toda a casa.</p>
+        <p class="sub reveal r-d2">Hospedagem para todos os públicos — quartos privativos para casais e famílias, e quartos compartilhados para quem viaja sozinho. Lounge, redário, área de meditação e Wi-Fi grátis em toda a casa.</p>
         <p class="reveal r-d3" style="color:var(--cinza);font-size:.96rem;line-height:1.75;margin-top:16px;max-width:560px;">Passeios turísticos e experiências holísticas para quem quer relaxar e se reconectar — e estacionamento privativo pra quem chega de carro.</p>
         <div class="sobre-tags reveal r-d3">
           <span class="tag">🛜 Wi-Fi grátis</span><span class="tag">🐾 Pet friendly</span>
@@ -413,8 +411,8 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         </div>
         <div class="room-body">
           <h3 class="room-name">Casal Premium</h3>
-          <p class="room-desc">Conforto e privacidade no clima perfeito. Ideal pra casais com ar-condicionado, TV e banheiro privativo.</p>
-          <div class="room-feats"><span class="rf">Ar-condicionado</span><span class="rf">TV</span><span class="rf">Banheiro privativo</span><span class="rf">Cama de casal</span></div>
+          <p class="room-desc">Conforto no clima perfeito. Ideal pra casais com ar-condicionado e TV.</p>
+          <div class="room-feats"><span class="rf">Ar-condicionado</span><span class="rf">TV</span><span class="rf">Cama de casal</span></div>
           <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=b48d8648-602d-1724702937-4713-8718-91b71d4b564d&lang=br" class="btn-room" target="_blank">Reservar →</a></div>
         </div>
       </div>
@@ -438,8 +436,8 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         </div>
         <div class="room-body">
           <h3 class="room-name">Quarto Compartilhado</h3>
-          <p class="room-desc">Perfeito pra quem viaja sozinho. Conheça gente do mundo todo em ambiente climatizado. O quarto tem <strong>armários individuais com cadeado</strong> — você pode trazer o seu ou comprar um conosco na recepção.</p>
-          <div class="room-feats"><span class="rf">Ar-condicionado</span><span class="rf">Armários com cadeado</span><span class="rf">Cadeado à venda na recepção</span><span class="rf">A partir de 1 pessoa</span></div>
+          <p class="room-desc">Perfeito pra quem viaja sozinho. Conheça gente do mundo todo em ambiente climatizado. O quarto tem <strong>lockers individuais com cadeado</strong> — você pode trazer o seu ou comprar um conosco na recepção.</p>
+          <div class="room-feats"><span class="rf">Ar-condicionado</span><span class="rf">Lockers com cadeado</span><span class="rf">Cadeado à venda na recepção</span><span class="rf">A partir de 1 pessoa</span></div>
           <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=b48d8648-602d-1724702937-4713-8718-91b71d4b564d&lang=br" class="btn-room" target="_blank">Reservar →</a></div>
         </div>
       </div>
@@ -464,7 +462,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         </div>
         <div class="room-body">
           <h3 class="room-name">Casal Deluxe</h3>
-          <p class="room-desc">A privacidade que você precisa com o melhor custo-benefício. Quarto de casal aconchegante e bem cuidado.</p>
+          <p class="room-desc">Quarto de casal aconchegante e bem cuidado, com ótimo custo-benefício.</p>
           <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Até 2 pessoas</span></div>
           <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=b48d8648-602d-1724702937-4713-8718-91b71d4b564d&lang=br" class="btn-room" target="_blank">Reservar →</a></div>
         </div>
@@ -490,7 +488,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         <div class="room-body">
           <h3 class="room-name">Família Premium</h3>
           <p class="room-desc">Espaço de sobra para famílias com AC e TV. O quarto mais completo da casa para quem quer conforto total.</p>
-          <div class="room-feats"><span class="rf">Ar-condicionado</span><span class="rf">TV</span><span class="rf">Banheiro privativo</span><span class="rf">Até 4 pessoas</span></div>
+          <div class="room-feats"><span class="rf">Ar-condicionado</span><span class="rf">TV</span><span class="rf">Até 4 pessoas</span></div>
           <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=b48d8648-602d-1724702937-4713-8718-91b71d4b564d&lang=br" class="btn-room" target="_blank">Reservar →</a></div>
         </div>
       </div>
@@ -669,10 +667,6 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         <div class="faq-item reveal r-d1">
           <button class="faq-q" onclick="toggleFaq(this)">É permitido fumar? <span class="faq-icon">+</span></button>
           <div class="faq-a">O ambiente interno é <strong>100% livre de fumaça</strong>. É permitido fumar apenas na <strong>área externa</strong> do hostel. Pedimos que respeite os demais hóspedes.</div>
-        </div>
-        <div class="faq-item reveal r-d2">
-          <button class="faq-q" onclick="toggleFaq(this)">Os banheiros são compartilhados ou privativos? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Depende do quarto escolhido. Os quartos <strong>Privativo com AC</strong> e <strong>Família Premium</strong> possuem banheiro privativo. Os demais tipos utilizam banheiros compartilhados limpos e bem conservados, separados por gênero.</div>
         </div>
         <div class="faq-item reveal r-d3">
           <button class="faq-q" onclick="toggleFaq(this)">Todos os quartos têm ar-condicionado? <span class="faq-icon">+</span></button>
@@ -894,9 +888,13 @@ function initSliders(){
       counter.style.display='none';
     }
 
+    function slideWidth(){
+      return slider.getBoundingClientRect().width;
+    }
+
     function goTo(n){
       cur=(n+total)%total;
-      slides.style.transform='translateX(-'+cur*100+'%)';
+      slides.style.transform='translateX(-'+(cur*slideWidth())+'px)';
       dotsC.querySelectorAll('.sdot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
       if(counter)counter.textContent=(cur+1)+' / '+total;
     }
@@ -905,11 +903,17 @@ function initSliders(){
       setInterval(function(){goTo(cur+1);},2800);
     }
 
-    slides.style.cursor='pointer';
     slides.addEventListener('click',function(e){
       if(e.target.closest('.sdot'))return;
       if(roomKey&&roomPool[roomKey])openLBWith(roomPool[roomKey],cur);
     });
+
+    if(document.fonts&&document.fonts.ready){
+      document.fonts.ready.then(function(){goTo(cur);});
+    }
+    window.addEventListener('load',function(){goTo(cur);});
+    window.addEventListener('resize',function(){goTo(cur);});
+    requestAnimationFrame(function(){goTo(0);});
   });
 }
 initSliders();
@@ -948,6 +952,37 @@ function updateLangButtons(lang){
   });
 }
 
+function applySpanishFixes(){
+  if(getCurrentLang()!=='es')return;
+  const fixes=[
+    ['taquillas individuales con candado','lockers individuales con candado'],
+    ['Taquillas individuales con candado','Lockers individuales con candado'],
+    ['taquillas con candado','Lockers con candado'],
+    ['Taquillas con candado','Lockers con candado'],
+    ['¿Hay taquillas o cajas fuertes','¿Hay lockers o cajas fuertes'],
+    ['de Cristo Redentor','del Cristo redentor'],
+    ['de Santos Dumont','del aeropuerto Santos Dumont'],
+    ['Yoga a pedido','Yoga bajo demanda'],
+    ['albergue','hostal'],
+    ['Albergue','Hostal'],
+    ['bien mantenido','bien cuidado'],
+    ['famílias','familias']
+  ];
+  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  let node;
+  while(node=walker.nextNode()){
+    if(node.parentElement&&node.parentElement.closest('#google_translate_element,.skiptranslate'))continue;
+    let t=node.nodeValue,next=t;
+    fixes.forEach(([from,to])=>{next=next.split(from).join(to);});
+    if(next!==t)node.nodeValue=next;
+  }
+}
+
+function scheduleSpanishFixes(){
+  if(getCurrentLang()!=='es')return;
+  [600,1200,2000].forEach(ms=>setTimeout(applySpanishFixes,ms));
+}
+
 function switchLang(lang){
   if(lang===getCurrentLang())return;
   setGoogTransCookie(lang);
@@ -957,6 +992,7 @@ function switchLang(lang){
     combo.value=lang;
     combo.dispatchEvent(new Event('change'));
     updateLangButtons(lang);
+    scheduleSpanishFixes();
   }else{
     location.reload();
   }
@@ -975,6 +1011,7 @@ function initLangSwitcher(){
   document.querySelectorAll('.lang-btn').forEach(btn=>{
     btn.addEventListener('click',()=>switchLang(btn.dataset.lang));
   });
+  scheduleSpanishFixes();
 }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
