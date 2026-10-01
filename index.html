@@ -23,7 +23,7 @@ img{display:block;max-width:100%;}
 a{text-decoration:none;color:inherit;}
 button{font-family:inherit;cursor:pointer;}
 
-/* Translation Control: Oculta apenas os idiomas inativos preservando o layout natural */
+/* Translation Control */
 body.lang-pt .lang-en, body.lang-pt .lang-es { display: none !important; }
 body.lang-en .lang-pt, body.lang-en .lang-es { display: none !important; }
 body.lang-es .lang-pt, body.lang-es .lang-en { display: none !important; }
@@ -270,7 +270,6 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
 .slide-counter{position:absolute;top:12px;right:12px;background:rgba(15,42,31,.62);color:var(--branco);font-size:.65rem;font-weight:600;padding:3px 9px;border-radius:20px;z-index:10;pointer-events:none;}
 </style>
 <script>
-  // Aplica a classe de idioma no HTML imediatamente para evitar qualquer piscar ou tela em branco
   (function() {
     const savedLang = localStorage.getItem('casinha-lang') || 'pt';
     document.documentElement.className = 'lang-' + savedLang;
@@ -431,7 +430,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
           <span class="tag">🛜 <span class="lang-pt">Wi-Fi grátis</span><span class="lang-en">Free Wi-Fi</span><span class="lang-es">Wi-Fi gratis</span></span>
           <span class="tag">🐾 Pet friendly</span>
           <span class="tag">🧘 Yoga & Meditação</span>
-          <span class="tag">🅿️ <span class="lang-pt">Estacionamento</span><span class="lang-en">Parking</span><span class="lang-es">Estacionamiento</span></span>
+          <span class="tag">🅿️️ <span class="lang-pt">Estacionamento</span><span class="lang-en">Parking</span><span class="lang-es">Estacionamiento</span></span>
           <span class="tag">🍳 <span class="lang-pt">Cozinha compartilhada</span><span class="lang-en">Shared Kitchen</span><span class="lang-es">Cocina Compartida</span></span>
           <span class="tag">💆 <span class="lang-pt">Massagem terapêutica</span><span class="lang-en">Therapeutic Massage</span><span class="lang-es">Masaje terapéutico</span></span>
         </div>
@@ -554,13 +553,16 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
             <span class="lang-pt">Casal Deluxe</span><span class="lang-en">Deluxe Double</span><span class="lang-es">Doble Deluxe</span>
           </h3>
           <p class="room-desc">
-            <span class="lang-pt">Quarto de casal aconchegante e bem cuidado, com ótimo custo-benefício.</span>
-            <span class="lang-en">Cozy and well-kept double room, with great value for money.</span>
-            <span class="lang-es">Habitación doble acogedora y bien cuidada, con excelente relación calidad-precio.</span>
+            <span class="lang-pt">Quarto de casal aconchegante com ar-condicionado, TV, frigobar e varanda privativa com rede para relaxar.</span>
+            <span class="lang-en">Cozy double room with air conditioning, TV, minibar, and a private balcony with a hammock to relax.</span>
+            <span class="lang-es">Habitación doble acogedora con aire acondicionado, TV, minibar y balcón privado con hamaca para relajarse.</span>
           </p>
           <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Ar-condicionado</span><span class="lang-en">Air conditioning</span><span class="lang-es">Aire acondicionado</span></span>
+            <span class="rf">TV</span>
+            <span class="rf"><span class="lang-pt">Frigobar</span><span class="lang-en">Minibar</span><span class="lang-es">Minibar</span></span>
+            <span class="rf"><span class="lang-pt">Varanda com rede</span><span class="lang-en">Balcony with hammock</span><span class="lang-es">Balcón con hamaca</span></span>
             <span class="rf"><span class="lang-pt">Cama de casal</span><span class="lang-en">Double bed</span><span class="lang-es">Cama doble</span></span>
-            <span class="rf"><span class="lang-pt">Até 2 pessoas</span><span class="lang-en">Up to 2 people</span><span class="lang-es">Hasta 2 personas</span></span>
           </div>
           <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=b48d8648-602d-1724702937-4713-8718-91b71d4b564d&lang=br" class="btn-room" target="_blank">
             <span class="lang-pt">Reservar →</span><span class="lang-en">Book →</span><span class="lang-es">Reservar →</span>
@@ -603,7 +605,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         </div>
       </div>
 
-      <!-- 5. Individual Solteiro -->
+      <!-- 5. Individual Solteiro (Atualizado com Ventilador) -->
       <div class="room reveal r-d2">
         <div class="room-img">
           <div class="room-slider" data-slider data-room="individual">
@@ -622,11 +624,12 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
             <span class="lang-pt">Individual Solteiro</span><span class="lang-en">Single Room</span><span class="lang-es">Habitación Individual</span>
           </h3>
           <p class="room-desc">
-            <span class="lang-pt">Um espaço só seu pra quem viaja sozinho e prefere privacidade total com cama de solteiro.</span>
-            <span class="lang-en">A space just for you if you travel solo and prefer total privacy with a single bed.</span>
-            <span class="lang-es">Un espacio solo para ti si viajas solo y prefieres total privacidad con cama individual.</span>
+            <span class="lang-pt">Um espaço só seu pra quem viaja sozinho e prefere privacidade total com cama de solteiro e ventilador.</span>
+            <span class="lang-en">A space just for you if you travel solo and prefer total privacy with a single bed and fan.</span>
+            <span class="lang-es">Un espacio solo para ti si viajas solo y prefieres total privacidad con cama individual y ventilador.</span>
           </p>
           <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Ventilador</span><span class="lang-en">Fan</span><span class="lang-es">Ventilador</span></span>
             <span class="rf"><span class="lang-pt">Cama de solteiro</span><span class="lang-en">Single bed</span><span class="lang-es">Cama individual</span></span>
             <span class="rf"><span class="lang-pt">1 pessoa</span><span class="lang-en">1 person</span><span class="lang-es">1 persona</span></span>
           </div>
@@ -636,31 +639,31 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
         </div>
       </div>
 
-      <!-- 6. Privativo com AC -->
+      <!-- 6. Casal Standard -->
       <div class="room reveal r-d3">
         <div class="room-img">
-          <div class="room-slider" data-slider data-room="privativoAC">
+          <div class="room-slider" data-slider data-room="casalStandard">
             <div class="room-slides">
-              <div class="room-slide"><img src="https://static.wixstatic.com/media/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png" alt="Privativo com AC" loading="lazy"></div>
+              <div class="room-slide"><img src="https://static.wixstatic.com/media/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png" alt="Casal Standard" loading="lazy"></div>
             </div>
             <button class="slide-prev" aria-label="Anterior">&#8249;</button>
             <button class="slide-next" aria-label="Próximo">&#8250;</button>
             <div class="slide-dots-r"></div>
             <span class="slide-counter">1 / 1</span>
           </div>
-          <span class="room-tag">Privativo</span>
+          <span class="room-tag">Standard</span>
         </div>
         <div class="room-body">
           <h3 class="room-name">
-            <span class="lang-pt">Privativo com AC</span><span class="lang-en">Private with AC</span><span class="lang-es">Privada con AC</span>
+            <span class="lang-pt">Casal Standard</span><span class="lang-en">Standard Double</span><span class="lang-es">Doble Standard</span>
           </h3>
           <p class="room-desc">
-            <span class="lang-pt">Conforto e privacidade com ar-condicionado. Ideal para quem busca um espaço exclusivo e climatizado.</span>
-            <span class="lang-en">Comfort and privacy with air conditioning. Ideal for those seeking an exclusive and acclimatized space.</span>
-            <span class="lang-es">Confort y privacidad con aire acondicionado. Ideal para quienes buscan un espacio exclusivo y climatizado.</span>
+            <span class="lang-pt">Conforto e privacidade com ventilador. Ideal para quem busca um espaço exclusivo e aconchegante.</span>
+            <span class="lang-en">Comfort and privacy with a fan. Ideal for those seeking an exclusive and cozy space.</span>
+            <span class="lang-es">Confort y privacidad con ventilador. Ideal para quienes buscan un espacio exclusivo y acogedor.</span>
           </p>
           <div class="room-feats">
-            <span class="rf"><span class="lang-pt">Ar-condicionado</span><span class="lang-en">Air conditioning</span><span class="lang-es">Aire acondicionado</span></span>
+            <span class="rf"><span class="lang-pt">Ventilador</span><span class="lang-en">Fan</span><span class="lang-es">Ventilador</span></span>
             <span class="rf"><span class="lang-pt">Privativo</span><span class="lang-en">Private</span><span class="lang-es">Privada</span></span>
           </div>
           <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=b48d8648-602d-1724702937-4713-8718-91b71d4b564d&lang=br" class="btn-room" target="_blank">
@@ -1002,9 +1005,9 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
              <span class="faq-icon">+</span>
           </button>
           <div class="faq-a">
-            <span class="lang-pt">Os quartos <strong>Privativo com AC</strong>, <strong>Compartilhado com AC</strong> e <strong>Família Premium</strong> são climatizados. Os modelos econômicos contam com ventilação e janelas — ideais para o clima ameno da Tijuca.</span>
-            <span class="lang-en">The <strong>Private with AC</strong>, <strong>Shared with AC</strong>, and <strong>Premium Family</strong> rooms are air-conditioned. Economy models have fans and windows — ideal for Tijuca's mild climate.</span>
-            <span class="lang-es">Las habitaciones <strong>Privada con AC</strong>, <strong>Compartida con AC</strong> y <strong>Familia Premium</strong> están climatizadas. Los modelos económicos cuentan con ventiladores y ventanas — ideales para el clima templado de Tijuca.</span>
+            <span class="lang-pt">Os quartos <strong>Casal Premium</strong>, <strong>Casal Deluxe</strong>, <strong>Compartilhado com AC</strong> e <strong>Família Premium</strong> são climatizados. O quarto <strong>Casal Standard</strong> conta com ventilador e janela.</span>
+            <span class="lang-en">The <strong>Premium Double</strong>, <strong>Deluxe Double</strong>, <strong>Shared with AC</strong>, and <strong>Premium Family</strong> rooms are air-conditioned. The <strong>Standard Double</strong> features a fan and window.</span>
+            <span class="lang-es">Las habitaciones <strong>Doble Premium</strong>, <strong>Doble Deluxe</strong>, <strong>Compartida con AC</strong> y <strong>Familia Premium</strong> están climatizadas. La habitación <strong>Doble Standard</strong> cuenta con ventilador y ventana.</span>
           </div>
         </div>
         <div class="faq-item reveal r-d3">
@@ -1293,7 +1296,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
       <li><a href="#quartos"><span class="lang-pt">Casal Deluxe</span><span class="lang-en">Deluxe Double</span><span class="lang-es">Doble Deluxe</span></a></li>
       <li><a href="#quartos"><span class="lang-pt">Família Premium</span><span class="lang-en">Premium Family</span><span class="lang-es">Familia Premium</span></a></li>
       <li><a href="#quartos"><span class="lang-pt">Individual Solteiro</span><span class="lang-en">Single Room</span><span class="lang-es">Habitación Individual</span></a></li>
-      <li><a href="#quartos"><span class="lang-pt">Privativo com AC</span><span class="lang-en">Private with AC</span><span class="lang-es">Privada con AC</span></a></li>
+      <li><a href="#quartos"><span class="lang-pt">Casal Standard</span><span class="lang-en">Standard Double</span><span class="lang-es">Doble Standard</span></a></li>
     </ul></div>
     <div class="f-col"><h4><span class="lang-pt">Contato</span><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4><ul>
       <li>📍 Rua General Silva Pessoa, 48</li><li>Tijuca · Rio de Janeiro · RJ</li>
@@ -1358,7 +1361,7 @@ var roomPool={
   casalDeluxe:[{s:'deluxe/_MG_5653.jpg'},{s:'deluxe/_MG_5657.jpg'}],
   familiaPremium:[{s:'https://drive.google.com/thumbnail?id=1AKXMOxfwsytp_Pt6mabc3o7ElsHF9OL9&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1C1fCy6e2sCuhuoe_LNB49Es7P0ESc_J6&sz=w1200'}],
   individual:[{s:'https://static.wixstatic.com/media/c74c33_b42afa64fa654f51bafc7dfa27e9dc7c~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_b42afa64fa654f51bafc7dfa27e9dc7c~mv2.png'}],
-  privativoAC:[{s:'https://static.wixstatic.com/media/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png'}]
+  casalStandard:[{s:'https://static.wixstatic.com/media/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png'}]
 };
 
 function openLBWith(pool,idx){
