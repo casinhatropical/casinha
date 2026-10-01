@@ -23,8 +23,18 @@ img{display:block;max-width:100%;}
 a{text-decoration:none;color:inherit;}
 button{font-family:inherit;cursor:pointer;}
 
-/* Translation Classes */
-.lang-en, .lang-es { display: none; }
+/* Translation Control via Body Classes */
+.lang-en, .lang-es { display: none !important; }
+.lang-pt { display: inherit; }
+
+body.lang-pt .lang-en, body.lang-pt .lang-es { display: none !important; }
+body.lang-pt .lang-pt { display: inherit !important; }
+
+body.lang-en .lang-pt, body.lang-en .lang-es { display: none !important; }
+body.lang-en .lang-en { display: inherit !important; }
+
+body.lang-es .lang-pt, body.lang-es .lang-en { display: none !important; }
+body.lang-es .lang-es { display: inherit !important; }
 
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(241,235,218,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(15,42,31,.08);transition:padding .3s;}
 nav.scrolled{padding:12px 48px;box-shadow:0 4px 28px rgba(15,42,31,.08);}
@@ -278,7 +288,7 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
 .slide-counter{position:absolute;top:12px;right:12px;background:rgba(15,42,31,.62);color:var(--branco);font-size:.65rem;font-weight:600;padding:3px 9px;border-radius:20px;z-index:10;pointer-events:none;}
 </style>
 </head>
-<body>
+<body class="lang-pt">
 
 <a href="https://wa.me/5521982596427" class="wa-float" target="_blank" aria-label="WhatsApp">💬</a>
 
@@ -900,7 +910,6 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
   </div>
 </section>
 
-
 <!-- FAQ -->
 <section id="faq" style="background:var(--pedra-d)">
   <div class="s-inner">
@@ -1239,7 +1248,6 @@ footer{background:var(--tinta);color:rgba(255,254,250,.65);padding:64px 48px 28p
   </div>
 </section>
 
-
 <div class="cta-band">
   <div class="cta-blob b1"></div><div class="cta-blob b2"></div>
   <div class="cta-inner">
@@ -1350,13 +1358,13 @@ var lbPool=[],lbI=0;
 var lb=document.getElementById('lightbox');
 var lbImg=document.getElementById('lbImg');
 
-var galleryPool=[{s:'https://drive.google.com/thumbnail?id=1n2dzWVrfh4HKpPgp4L2w6ZIbj7Y6R343&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=13TyWZg-NiA0UvmeW5lv3ss5InNT9Y0PA&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1-GNbZU-LU4PvzorYK9HbW89NT4eYRfzj&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=11nWRVViWvmS_Wqtg84ItzR6vLL2BMK4M&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=16Et-mSoyMI_gzaeXcQSKv5ogyYU6P6fx&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=17JBBcVYCrDQIcWCw9ntJuqEBAtV4yv-m&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1EL-ftv1b_IlHpAELiZ9SnNtXmCSp6IPq&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1SgCwxU2vfVJShLJtj3Nwag155zj-beVp&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1h1DtT4N46685M1TGttMAWwCarfXtrMm1&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1hLKSSVnsYrQHa6YZD3uelAcT5R49Bfhb&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1ifGVNXoxQAWCMcg2vJKFFKhHa1MKK9F2&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1kUUcmckehkxOeXzNX66v9EhjVQD1FVgv&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1khXrtIys5xidtBk1u2ajv-Lzc0DQc7FJ&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1ktKgAaG9Y2cxITiGBEWGy7r15-kzyaoF&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1r2Nw60Q9s5GrWBPyYrIEgFekKot9uIw_&sz=w1200'}];
+var galleryPool=[{s:'https://drive.google.com/thumbnail?id=1n2dzWVrfh4HKpPgp4L2w6ZIbj7Y6R343&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=13TyWZg-NiA0UvmeW5lv3ss5InNT9Y0PA&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1-GNbZU-LU4PvzorYK9HbW89NT4eYRfzj&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=11nWRVViWvmS_Wqtg84ItzR6vLL2BMK4M&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=16Et-mSoyMI_gzaeXcQSKv5ogyYU6P6fx&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=17JBBcVYCrDQIcWCw9ntJuqEBAtV4yv-m&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1EL-ftv1b_IlHpAELiZ9SnNtXmCSp6IPq&sz=w1200'}];
 
 var roomPool={
-  casalPremium:[{s:'https://drive.google.com/thumbnail?id=1qT8kWJ0LPQBNIvg94NX3rZMjeIwL0NXu&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1xDcaOlbecu5prIIXucq-Z0E-P7uUEDvP&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1OteoEz1hkCnPBuH0t_sFJ7JAOlWGQvHK&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=192UhjkDCR8EIUUuLAX4w19c0lZYUmWhh&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1DFpgnt2ST7sJm8CpWiSmAaR9yCccfYUn&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=15lMSig3_PfYzE2eW5uK2fAa4S0zH08xU&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=18r1o1_NIwicm2555aB2P-Skjcls_am5f&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1HdIliaUtP8L8ds3bWCwN9ZWBPmZolA4N&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1GpUY1NZTp2-H3-GTxOo053Qv3kx_qmLG&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1ZINUQZbxap3rRs1_xb3Jrvq3Sk5ABw3d&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1eaEHiprf_9HhcWejDbeOI83gUYCkxQoi&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1vuoHGoEYTtSb7V1mgoVrqjUPKjU3_gXv&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1wHZMUrVssGLAxfQEbZkq_rHKL8OsGpfy&sz=w1200'}],
-  compartilhado:[{s:'https://drive.google.com/thumbnail?id=1uyTyHvy4P1BmQWFE9fb3D1kjovTgBPIl&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1G7SsjxaZtczxD6hGgKfIx4YpSmo7GgPh&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=15T9ZojIANJP_Axb6Uc5Md1n-q9mm9T8v&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1UfvYqioDLuv4KBEINogc6JZ7N-4Ed8Lh&sz=w1200'}],
-  casalDeluxe:[{s:'deluxe/_MG_5653.jpg'},{s:'deluxe/_MG_5657.jpg'},{s:'deluxe/_MG_5604.jpg'},{s:'deluxe/_MG_5663.jpg'},{s:'deluxe/_MG_5665.jpg'}],
-  familiaPremium:[{s:'https://drive.google.com/thumbnail?id=1AKXMOxfwsytp_Pt6mabc3o7ElsHF9OL9&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1C1fCy6e2sCuhuoe_LNB49Es7P0ESc_J6&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1UIOAROd8dMMgZPu1ava2LFMiQlf_tC0i&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1CUJ-D7j6LJfTYQ8JU9qjp98BI1jw26As&sz=w1200'}],
+  casalPremium:[{s:'https://drive.google.com/thumbnail?id=1qT8kWJ0LPQBNIvg94NX3rZMjeIwL0NXu&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1xDcaOlbecu5prIIXucq-Z0E-P7uUEDvP&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1OteoEz1hkCnPBuH0t_sFJ7JAOlWGQvHK&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=192UhjkDCR8EIUUuLAX4w19c0lZYUmWhh&sz=w1200'}],
+  compartilhado:[{s:'https://drive.google.com/thumbnail?id=1uyTyHvy4P1BmQWFE9fb3D1kjovTgBPIl&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1G7SsjxaZtczxD6hGgKfIx4YpSmo7GgPh&sz=w1200'}],
+  casalDeluxe:[{s:'deluxe/_MG_5653.jpg'},{s:'deluxe/_MG_5657.jpg'}],
+  familiaPremium:[{s:'https://drive.google.com/thumbnail?id=1AKXMOxfwsytp_Pt6mabc3o7ElsHF9OL9&sz=w1200'},{s:'https://drive.google.com/thumbnail?id=1C1fCy6e2sCuhuoe_LNB49Es7P0ESc_J6&sz=w1200'}],
   individual:[{s:'https://static.wixstatic.com/media/c74c33_b42afa64fa654f51bafc7dfa27e9dc7c~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_b42afa64fa654f51bafc7dfa27e9dc7c~mv2.png'}],
   privativoAC:[{s:'https://static.wixstatic.com/media/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png/v1/fill/w_1200,h_800,al_c,q_90,enc_avif,quality_auto/c74c33_899275c19fe84b8b813792b17855c0e3~mv2.png'}]
 };
@@ -1433,15 +1441,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
 });
 
-// ── Traduções Manuais ─────────────────────────────────────
+// ── Sistema de Idiomas Baseado em Classes no Body ───────────────────────────
 function setLanguage(lang) {
   document.documentElement.lang = lang;
-  
-  const allLangElements = document.querySelectorAll('.lang-pt, .lang-en, .lang-es');
-  allLangElements.forEach(el => el.style.display = 'none');
-  
-  const selectedLangElements = document.querySelectorAll('.lang-' + lang);
-  selectedLangElements.forEach(el => el.style.display = '');
+  document.body.className = 'lang-' + lang;
+  localStorage.setItem('casinha-lang', lang);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     if(btn.getAttribute('data-lang') === lang) {
@@ -1450,8 +1454,6 @@ function setLanguage(lang) {
       btn.classList.remove('active');
     }
   });
-
-  localStorage.setItem('casinha-lang', lang);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
